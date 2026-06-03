@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FB Autofill</title>
+<style>
+ body{font-family:Arial,sans-serif;width:390px;padding:12px;background:#f9f9f9;text-align:center;border-radius:8px}
+ h3{margin:5px 0 8px;color:#333}.topbar{background:#fff;border:1px solid #ddd;border-radius:8px;padding:10px;margin-bottom:10px}
+ label{display:block;font-weight:bold;margin-top:8px;text-align:left}input,textarea,button,select{width:100%;box-sizing:border-box;margin-top:5px;padding:8px;border:1px solid #ccc;border-radius:5px}textarea{resize:none;height:58px}
+ button{background:#007bff;color:white;border:none;cursor:pointer;font-weight:bold}button:hover{background:#0056b3}.green{background:#149447}.gray{background:#666}.orange{background:#e48900}
+ .listingBox{background:#fff;border:1px solid #ddd;border-radius:8px;padding:10px;margin:10px 0;text-align:left}.listingBox h4{margin:0 0 8px;color:#222;text-align:center}
+ .small{display:block;text-align:left;color:#555;font-size:12px;margin-top:3px}.saveResetRow{display:flex;align-items:center;gap:8px;margin-top:5px}.saveResetRow #saveData{flex:1}.saveResetRow #resetData{width:auto;min-width:70px;padding:6px 9px;font-size:12px;background:#666}.footer{margin-top:15px;font-size:12px;color:#555}.footer span{color:red}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.imgCount{font-size:12px;color:#0a7a34;margin-top:3px;display:block}.warning{font-size:12px;color:#555;text-align:left;line-height:1.35}.draftBtn{width:auto;padding:6px 10px;font-size:12px;background:#555;margin:0 0 8px}
+</style>
+</head>
+<body>
+<h3>FB Marketplace Autofill</h3>
+<button id="draftOpener" class="draftBtn">Draft Opener</button>
+<div class="topbar">
+  <h4 style="margin:0 0 8px;color:#222;">Listing Data Sections</h4>
+  <label for="listingCount">How many listings?</label>
+  <select id="listingCount">
+    <option value="1">1 Listing</option><option value="2">2 Listings</option><option value="3">3 Listings</option><option value="4">4 Listings</option><option value="5">5 Listings</option><option value="6">6 Listings</option><option value="7">7 Listings</option><option value="8">8 Listings</option><option value="9">9 Listings</option><option value="10">10 Listings</option><option value="11">11 Listings</option><option value="12">12 Listings</option><option value="13">13 Listings</option><option value="14">14 Listings</option><option value="15">15 Listings</option><option value="16">16 Listings</option><option value="17">17 Listings</option><option value="18">18 Listings</option><option value="19">19 Listings</option><option value="20">20 Listings</option><option value="21">21 Listings</option><option value="22">22 Listings</option><option value="23">23 Listings</option><option value="24">24 Listings</option><option value="25">25 Listings</option><option value="26">26 Listings</option><option value="27">27 Listings</option><option value="28">28 Listings</option><option value="29">29 Listings</option><option value="30">30 Listings</option>
+  </select>
+  <button id="openSelectedTabs" class="orange">Open Selected Listing Tabs</button>
+  <p class="warning">Yahan listings select karo. Agar 1 Listing select hogi to usi listing ke neeche Number of Tabs option aaye ga. Agar 2–30 listings select hongi to har listing apne matching tab mein open hogi.</p>
+</div>
+
+<div class="topbar">
+  <h4 style="margin:0 0 8px;color:#222;">Locations List</h4>
+  <label for="locationsList">Paste locations, one per line:</label>
+  <textarea id="locationsList" style="height:90px" placeholder="Houston, Texas
+Dallas, Texas
+Austin, Texas
+San Antonio, Texas"></textarea>
+  <p class="warning">Listing 1 → first location, Listing 2 → second location. Agar tabs locations se zyada hon to last location repeat hogi.</p>
+</div>
+<div id="listingsContainer"></div>
+<div class="saveResetRow"><button id="saveData" class="green">Save Data</button><button id="resetData" class="gray">Reset</button></div>
+<div class="topbar">
+  <button id="exportData" class="orange">Export Backup</button>
+  <label>Import Backup:</label>
+  <input type="file" id="importData" accept="application/json,.json">
+  <p class="warning">Export file ko kisi aur browser/profile mein import karoge to title, price, description aur saved images wapas aa jayengi.</p>
+</div>
+<div class="footer">Developed by <strong>Arslan</strong><br>Contact: +92 300 6782771</div>
+<script src="popup.js"></script>
+</body>
+</html>
